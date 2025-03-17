@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "author": "虞晨 <chen.yu@cicc.com.cn>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-react": "^9.4.0",
+    "@lexical/react": "^0.27.1",
+    "@tinymce/tinymce-react": "^6.0.0",
+    "antd": "^5.24.3",
+    "ckeditor5": "^44.1.0",
+    "lexical": "^0.27.1",
+    "lodash": "^4.17.21",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "umi": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "typescript": "^5.0.3"
+  }
+}
