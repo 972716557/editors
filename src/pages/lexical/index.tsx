@@ -4,9 +4,10 @@ import { HeadingNode } from "@lexical/rich-text";
 import { ListNode, ListItemNode } from "@lexical/list";
 import { LinkNode } from "@lexical/link";
 import Editor from "./editor";
-import { InlineImageNode } from "./ToolbarPlugin/image";
+import { InlineImageNode } from "./image";
 import "./index.less";
-import { StyledTextNode } from "./ToolbarPlugin/color";
+import { StyledTextNode } from "./color";
+import { VideoNode } from "./video";
 const UndoRedoEditor = () => {
   // 创建编辑器实例
 
@@ -21,8 +22,10 @@ const UndoRedoEditor = () => {
           LinkNode,
           InlineImageNode,
           StyledTextNode,
+          VideoNode,
         ],
         theme: {
+          video: "editor-video",
           text: {
             bold: "editor-text-bold", // 可选：自定义 CSS 类名
             italic: "editor-text-italic",

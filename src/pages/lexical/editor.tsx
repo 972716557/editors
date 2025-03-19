@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import ToolbarPlugin from "./ToolbarPlugin";
+import ToolbarPlugin from "./toolbar";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
 import { ListPlugin } from "@lexical/react/LexicalListPlugin";
 import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
-import StylePlugin from "./ToolbarPlugin/style";
+import StylePlugin from "./style";
 
 // 创建根节点
 

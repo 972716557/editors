@@ -34,6 +34,7 @@ import {
 } from "@lexical/list";
 import { $createInlineImageNode } from "./image";
 import { APPLY_STYLE_COMMAND } from "./styleCommand";
+import { $createVideoNode } from "./video";
 type HeadingTagType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 export default function ToolbarPlugin({
@@ -208,6 +209,20 @@ export default function ToolbarPlugin({
         aria-label="Justify Align"
       >
         图片上传
+      </button>
+      <button
+        onClick={() => {
+          editor.update(() => {
+            const videoNode = $createVideoNode({
+              src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+            });
+            $insertNodes([videoNode]);
+          });
+        }}
+        className="toolbar-item"
+        aria-label="Justify Align"
+      >
+        插入视频
       </button>
     </div>
   );
