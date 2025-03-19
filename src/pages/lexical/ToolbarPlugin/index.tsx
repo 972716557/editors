@@ -33,6 +33,7 @@ import {
   INSERT_UNORDERED_LIST_COMMAND,
 } from "@lexical/list";
 import { $createInlineImageNode } from "./image";
+import { APPLY_STYLE_COMMAND } from "./styleCommand";
 type HeadingTagType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 export default function ToolbarPlugin({
@@ -73,11 +74,9 @@ export default function ToolbarPlugin({
   };
 
   const applyColor = (color) => {
-    editor.update(() => {
-      const selection = $getSelection();
-      if ($isRangeSelection(selection)) {
-        selection.formatText("color", color); // 自定义文本颜色格式
-      }
+    editor.dispatchCommand(APPLY_STYLE_COMMAND, {
+      property: "color",
+      value: "#ff0000",
     });
   };
 

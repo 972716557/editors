@@ -7,6 +7,7 @@ import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
 import { ListPlugin } from "@lexical/react/LexicalListPlugin";
 import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
+import StylePlugin from "./ToolbarPlugin/style";
 
 // 创建根节点
 
@@ -24,11 +25,15 @@ const Editor = () => {
         setActiveEditor={setActiveEditor}
         setIsLinkEditMode={setIsLinkEditMode}
       />
-      <RichTextPlugin
-        placeholder={<div className="editor-placeholder">Enter text...</div>}
-        contentEditable={<ContentEditable className="editor-input" />}
-        ErrorBoundary={LexicalErrorBoundary}
-      />
+      <div style={{ position: "relative" }}>
+        <StylePlugin />
+        <RichTextPlugin
+          placeholder={<div className="editor-placeholder">Enter text...</div>}
+          contentEditable={<ContentEditable className="editor-input" />}
+          ErrorBoundary={LexicalErrorBoundary}
+        />
+      </div>
+
       <LinkPlugin />
       <ListPlugin />
       <HistoryPlugin />

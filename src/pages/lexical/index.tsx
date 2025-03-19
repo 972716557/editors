@@ -5,28 +5,36 @@ import { ListNode, ListItemNode } from "@lexical/list";
 import { LinkNode } from "@lexical/link";
 import Editor from "./editor";
 import { InlineImageNode } from "./ToolbarPlugin/image";
-
+import "./index.less";
+import { StyledTextNode } from "./ToolbarPlugin/color";
 const UndoRedoEditor = () => {
   // 创建编辑器实例
 
   return (
     <LexicalComposer
       initialConfig={{
-        nodes: [HeadingNode, ListNode, ListItemNode, LinkNode, InlineImageNode],
-        editor: {
-          namespace: "MyLexicalEditor",
+        namespace: "MyLexicalEditor",
+        nodes: [
+          HeadingNode,
+          ListNode,
+          ListItemNode,
+          LinkNode,
+          InlineImageNode,
+          StyledTextNode,
+        ],
+        theme: {
           text: {
-            bold: "my-bold-class", // 可选：自定义 CSS 类名
-            italic: "my-italic-class",
-            underline: "my-underline-class",
+            bold: "editor-text-bold", // 可选：自定义 CSS 类名
+            italic: "editor-text-italic",
+            strikethrough: "editor-text-strikethrough",
+            underline: "editor-text-underline",
+            underlineStrikethrough: "editor-text-underlineStrikethrough",
           },
-          theme: {
-            paragraph: "editor-paragraph",
-            heading: {
-              h1: "editor-heading-h1",
-              h2: "editor-heading-h2",
-              h3: "editor-heading-h3",
-            },
+          paragraph: "editor-paragraph",
+          heading: {
+            h1: "editor-heading-h1",
+            h2: "editor-heading-h2",
+            h3: "editor-heading-h3",
           },
         },
         onError: (error) => {
