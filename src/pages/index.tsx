@@ -6,7 +6,7 @@ const Editor = () => {
   return (
     <div>
       <Tabs
-        defaultActiveKey="2"
+        defaultActiveKey="tinymce"
         items={[
           {
             label: `ckeditor`,
